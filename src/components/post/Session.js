@@ -18,7 +18,7 @@ import WidgetPosts from "../fragements/WidgetPosts";
 
 class Session extends React.Component {
   render() {
-    const post = this.props;
+    const post = this.props.post;
     return (
       <div className="section">
         <div className="container">

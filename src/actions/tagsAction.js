@@ -12,7 +12,8 @@ export const getTags = (params = {
     category_id : ''
 }) => {
     return (dispatch) => {
-        return axios.get('home/tags?post_id='+params.posts_id+'&category_id='+params.category_id,requestConfig()).then(result => {
+        debugger
+        return axios.get('home/tags?post_id='+params.post_id+'&category_id='+params.category_id?params.category_id:'',requestConfig()).then(result => {
             let {data} = result.data;
             dispatch(_getTags(data));
         });

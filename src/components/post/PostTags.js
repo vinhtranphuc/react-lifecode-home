@@ -10,6 +10,7 @@ class PostTags extends React.Component {
     let param  = {
       post_id : this.props.post_id?this.props.post_id:'1'
     }
+    debugger
     this.props.getTags(param)
   }
 

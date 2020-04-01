@@ -8,7 +8,7 @@ import {getPostByPostId} from "../../actions/postsAction"
 class Post extends React.Component {
   constructor(props) {
     super(props)
-    let post_id = props.match.params.post_id;
+    let post_id = props.computedMatch.params.post_id;
     this.state = {
       post_id : post_id
     }

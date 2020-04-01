@@ -7,10 +7,11 @@ import {getPostsByCategory} from "../../actions/postsAction"
 
 const CategoryPosts = (props) => {
   
+  const INIT_POSTS = 8;
   const scrollTarget = useRef(null);
   const mounted = useRef();
   const [state, setState] = React.useState({
-    numberOfPosts: 8,
+    numberOfPosts: INIT_POSTS,
     loadMorePosts : false
   })
   useEffect(() => {
@@ -18,13 +19,13 @@ const CategoryPosts = (props) => {
       mounted.current = true;
       let params = {
         category_id : props.category_id,
-        records_no : 8
+        records_no : INIT_POSTS
       }
       props.getPostsByCategory(params);
     } else {
       if(state.loadMorePosts) {
         var elmTop = scrollTarget.current.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo(0,elmTop - 25);
+        window.scrollTo(0,elmTop - 100);
       }
     }
   });
@@ -44,9 +45,10 @@ const CategoryPosts = (props) => {
   const LoadMorePosts = (props) => {
     const posts = props.posts ? props.posts : [];
     let postTargetScroll = posts.length - 3;
-    const postsComponent = [];
+    let postsComponent = [];
     posts && posts.map((e, index) =>
-      index > 4 && postsComponent.push(
+      index > 4
+      && postsComponent.push(
         e ? <DisplayPost
           containerSize="post-row"
           images={e.images}
@@ -82,7 +84,7 @@ const CategoryPosts = (props) => {
       </div>
       <LoadMorePosts posts={posts} />
       <div className="section-row loadmore text-center">
-        <a href="#" className="primary-button" onClick={handleLoadMorePostsClick}>
+        <a className="primary-button" onClick={handleLoadMorePostsClick}>
           Load More
           </a>
       </div>
