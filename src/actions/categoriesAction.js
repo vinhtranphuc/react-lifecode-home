@@ -9,7 +9,7 @@ const _getCategories = (data) => {
 
 export const getCategories = () => {
     return (dispatch) => {
-        return axios.get('home/categories',requestConfig()).then(result => {
+        return axios.get('blog/categories',requestConfig()).then(result => {
             let {data} = result.data;
             dispatch(_getCategories(data));
         });

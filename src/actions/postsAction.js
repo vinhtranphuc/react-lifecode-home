@@ -9,7 +9,7 @@ const _getPosts = (data) => {
 
 export const getPosts = () => {
     return async (dispatch) => {
-        const result = await axios.get('home/posts',requestConfig());
+        const result = await axios.get('blog/posts',requestConfig());
         let {data} = result.data;
         dispatch(_getPosts(data));
     };
@@ -24,7 +24,7 @@ const _getHotPosts = (data) => {
 
 export const getHotPosts = () => {
     return async (dispatch) => {
-        const result = await axios.get('home/hot-posts',requestConfig());
+        const result = await axios.get('blog/hot-posts',requestConfig());
         let {data} = result.data;
         dispatch(_getHotPosts(data));
     };
@@ -39,7 +39,7 @@ const _getRecentPosts = (data) => {
 
 export const getRecentPosts = () => {
     return async (dispatch) => {
-        const result = await axios.get('home/recent-posts',requestConfig());
+        const result = await axios.get('blog/recent-posts',requestConfig());
         let {data} = result.data;
         dispatch(_getRecentPosts(data));
     };
@@ -54,7 +54,7 @@ const _getOldPosts = (data) => {
 
 export const getOldPosts = (numberOfPosts) => {
     return async (dispatch) => {
-        const result = await axios.get(`home/old-posts?records_no=${numberOfPosts}`,requestConfig());
+        const result = await axios.get(`blog/old-posts?records_no=${numberOfPosts}`,requestConfig());
         let {data} = result.data;
         dispatch(_getOldPosts(data));
     };
@@ -69,7 +69,7 @@ const _getPopularPosts = (data) => {
 
 export const getPopularPosts = () => {
     return async (dispatch) => {
-        const result = await axios.get('home/popular-posts',requestConfig());
+        const result = await axios.get('blog/popular-posts',requestConfig());
         let {data} = result.data;
         dispatch(_getPopularPosts(data));
     };
@@ -87,7 +87,7 @@ export const getPostsByCategory = (params = {
     records_no : ''
 }) => {
     return async (dispatch) => {
-        const result = await axios.get(`home/posts?category_id=${params.category_id}&records_no=${params.records_no}`,requestConfig());
+        const result = await axios.get(`blog/posts?category_id=${params.category_id}&records_no=${params.records_no}`,requestConfig());
         let {data} = result.data;
         dispatch(_getPostsByCategory(data));
     };
@@ -112,7 +112,7 @@ export const getPostsByCategory1 = (params = {
 }) => {
     return async (dispatch) => {
         const CATEGORY_ID = 1;
-        const result = await axios.get(`home/posts?category_id=${CATEGORY_ID}&page=${params.page}&records_no=${params.records_no}`,requestConfig());
+        const result = await axios.get(`blog/posts?category_id=${CATEGORY_ID}&page=${params.page}&records_no=${params.records_no}`,requestConfig());
         let {data} = result.data;
         if(parseInt(params.records_no) === 3) {
             dispatch(_getPostsByCategory1_3R(data));
@@ -143,7 +143,7 @@ export const getPostsByCategory2 = (params = {
 }) => {
     return async (dispatch) => {
         const CATEGORY_ID = 2;
-        const result = await axios.get(`home/posts?category_id=${CATEGORY_ID}&page=${params.page}&records_no=${params.records_no}`,requestConfig());
+        const result = await axios.get(`blog/posts?category_id=${CATEGORY_ID}&page=${params.page}&records_no=${params.records_no}`,requestConfig());
         let {data} = result.data;
         if(parseInt(params.records_no) === 3) {
             dispatch(_getPostsByCategory2_3R(data));
@@ -174,7 +174,7 @@ export const getPostsByCategory3 = (params = {
 }) => {
     return async (dispatch) => {
         const CATEGORY_ID = 3;
-        const result = await axios.get(`home/posts?category_id=${CATEGORY_ID}&page=${params.page}&records_no=${params.records_no}`,requestConfig());
+        const result = await axios.get(`blog/posts?category_id=${CATEGORY_ID}&page=${params.page}&records_no=${params.records_no}`,requestConfig());
         let {data} = result.data;
         if(parseInt(params.records_no) === 3) {
             dispatch(_getPostsByCategory3_3R(data));
@@ -204,7 +204,7 @@ export const getPostsByCategory4 = (params = {
 }) => {
     return async (dispatch) => {
         const CATEGORY_ID = 4;
-        const result = await axios.get(`home/posts?category_id=${CATEGORY_ID}&page=${params.page}&records_no=${params.records_no}`,requestConfig());
+        const result = await axios.get(`blog/posts?category_id=${CATEGORY_ID}&page=${params.page}&records_no=${params.records_no}`,requestConfig());
         let {data} = result.data;
         if(parseInt(params.records_no) === 3) {
             dispatch(_getPostsByCategory4_3R(data));
@@ -228,7 +228,7 @@ export const getPostByPostId = (params = {
     post_id : ''
 }) => {
     return async (dispatch) => {
-        const result = await axios.get('home/post/'+params.post_id,requestConfig());
+        const result = await axios.get('blog/post/'+params.post_id,requestConfig());
         let {data} = result.data;
         dispatch(_getPostByPostId(data));
     };

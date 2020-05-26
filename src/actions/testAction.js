@@ -9,7 +9,7 @@ import {getPopularPosts} from "../actions/postsAction"
 
 export const getTest = () => {
     return (dispatch) => {
-        return axios.delete('home/test',requestConfig()).then(result => {
+        return axios.delete('blog/test',requestConfig()).then(result => {
             dispatch(getPopularPosts());
         });
     };

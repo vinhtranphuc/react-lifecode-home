@@ -31,6 +31,20 @@ export function signup(signupRequest) {
     });
 }
 
+export function checkUsernameAvailability(username) {
+    return request({
+        url: API_BASE_URL + "/auth/checkUsernameAvailability?username=" + username,
+        method: 'GET'
+    });
+}
+
+export function checkEmailAvailability(email) {
+    return request({
+        url: API_BASE_URL + "/auth/checkEmailAvailability?email=" + email,
+        method: 'GET'
+    });
+}
+
 export function getUserProfile(username) {
     return request({
         url: API_BASE_URL + "/users/" + username,
@@ -38,17 +52,5 @@ export function getUserProfile(username) {
     });
 }
 
-export function checkUsernameAvailability(username) {
-    return request({
-        url: API_BASE_URL + "/users/checkUsernameAvailability?username=" + username,
-        method: 'GET'
-    });
-}
 
-export function checkEmailAvailability(email) {
-    return request({
-        url: API_BASE_URL + "/users/checkEmailAvailability?email=" + email,
-        method: 'GET'
-    });
-}
 

@@ -26,7 +26,7 @@ class Login extends Component {
         const AntWrappedLoginForm = Form.create()(connect(mapStateToProps,mapDispatchToProps)(LoginForm))
         return (
             <div className="login-container">
-                <h1 className="page-title">Login</h1>
+                <h3 className="page-title">login</h3>
                 <div className="login-content">
                     <AntWrappedLoginForm goHome={this.goHome}/>
                 </div>

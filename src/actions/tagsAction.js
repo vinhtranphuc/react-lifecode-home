@@ -8,12 +8,11 @@ const _getTags = (data) => {
 })};
 
 export const getTags = (params = {
-    posts_id : '',
+    post_id : '',
     category_id : ''
 }) => {
-    return (dispatch) => {
-        debugger
-        return axios.get('home/tags?post_id='+params.post_id+'&category_id='+params.category_id?params.category_id:'',requestConfig()).then(result => {
+    return async (dispatch) => {
+        return await axios.get('blog/tags?post_id='+params.post_id+'&category_id='+params.category_id,requestConfig()).then(result => {
             let {data} = result.data;
             dispatch(_getTags(data));
         });
