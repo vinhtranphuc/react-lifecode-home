@@ -1,6 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import PropTypes from "prop-types";
+import CKEditor from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+import './PostContent.css';
 
 class PostContent extends React.Component {
   htmlDecode(input){
@@ -10,7 +14,15 @@ class PostContent extends React.Component {
   }
   render() {
     return (
-      <div className="section-row" dangerouslySetInnerHTML={{ __html: this.htmlDecode(this.props.content)}}>
+      <div className="section-row" >
+            <CKEditor
+                    editor={ ClassicEditor }
+                    data={this.htmlDecode(this.props.content)}
+                    onInit={editor => {
+                      editor.isReadOnly = true;
+                      console.log('Editor is ready to use!', editor);
+                    }}
+                />
       </div>
     );
   }
