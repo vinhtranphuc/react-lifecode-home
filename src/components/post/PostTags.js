@@ -17,14 +17,12 @@ class PostTags extends React.Component {
     return (
       <div className="section-row">
         <div className="post-category">
-          <ul>
-            <li>TAGS : </li>
-            {this.props.postTags.map((item)=>
-              <li>
-                <a href={item.tag_id}>{' '+item.tag}</a>
-              </li>
+            <span style={{fontWeight:'bold'}}>TAGS : </span>
+            {this.props.postTags.map((item, index)=>
+              <span>
+                <a href={item.tag_id}>{' '+item.tag}{index<this.props.postTags.length-1?', ':''}</a>
+              </span>
             )}
-          </ul>
         </div>
       </div>
     );

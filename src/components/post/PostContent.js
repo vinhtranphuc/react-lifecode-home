@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import ClassicEditor from '@emetworks/ckeditor5-build-classic-plus';
 
 import './PostContent.css';
 

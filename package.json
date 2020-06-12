@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^19.0.2",
+    "@emetworks/ckeditor5-build-classic-plus": "^1.0.0",
     "@ckeditor/ckeditor5-react": "^2.1.0",
-    "@ckeditor/ckeditor5-restricted-editing": "^19.0.1",
     "antd": "^3.2.2",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
