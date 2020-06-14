@@ -1,5 +1,5 @@
 const postsReducerDefaultState = [];
-
+const postReducerDefaultState = [];
 export const Posts = (state = postsReducerDefaultState, action) => {
     switch (action.type) {
         case 'GET_POSTS':
@@ -126,7 +126,7 @@ export const OldPosts = (state = postsReducerDefaultState, action) => {
     }
 };
 
-export const PostByPostId = (state = postsReducerDefaultState, action) => {
+export const PostByPostId = (state = postReducerDefaultState, action) => {
     switch (action.type) {
         case 'GET_POST_POST_ID':
             return action.data;
