@@ -17,7 +17,8 @@ class PostContent extends React.Component {
       <div className="section-row" >
             <CKEditor
                     editor={ ClassicEditor }
-                    data={this.htmlDecode(this.props.content)}
+                    //data={this.htmlDecode(this.props.content)}
+                    data={this.props.content}
                     onInit={editor => {
                       editor.isReadOnly = true;
                       console.log('Editor is ready to use!', editor);
