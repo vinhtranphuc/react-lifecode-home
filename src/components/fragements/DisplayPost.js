@@ -3,6 +3,7 @@
 import React from "react";
 import {HOME_POST_PATH, HOME_TAG_PATH, HOME_USER_PATH} from "../../constants";
 import PropTypes from "prop-types";
+import { Carousel } from 'antd';
 
 class DisplayPost extends React.Component {
 
@@ -12,11 +13,17 @@ class DisplayPost extends React.Component {
     render() {
         const post = this.props;
         const refProp = post.refProp;
-        const avatar = post.images && post.images[0] ? post.images[0].path : '';
+        const imagesPath = post.images && post.images.map(e => e.path);
         return (
             <div ref={refProp?refProp:""} key={post.post_id} className={'post ' + post.containerSize}>
                 <a className="post-img" href={HOME_POST_PATH+post.post_id}>
-                    <img src={avatar} alt />
+                    <Carousel autoplay>
+                        {imagesPath.map(e => {
+                            return (
+                                <img src={e} alt />
+                            )
+                        })}
+                    </Carousel>
                 </a>
                 <div className="post-body">
                     <div className="post-category">

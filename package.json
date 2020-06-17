@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emetworks/ckeditor5-build-classic-plus": "^1.0.0",
     "@ckeditor/ckeditor5-react": "^2.1.0",
-    "antd": "^3.2.2",
+    "@emetworks/ckeditor5-build-classic-plus": "^1.0.0",
+    "antd": "^3.26.18",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "react": "^16.9.0",
