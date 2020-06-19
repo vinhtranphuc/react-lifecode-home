@@ -209,19 +209,19 @@ NavMenuTabDropDown.defaultProps = {
     types: [
         {
             typeName: "Life talk",
-            typeId: "4"
-        },
-        {
-            typeName: "Code talk",
             typeId: "1"
         },
         {
-            typeName: "Photographs",
+            typeName: "Code talk",
             typeId: "2"
         },
         {
-            typeName: "Travel",
+            typeName: "Photographs",
             typeId: "3"
+        },
+        {
+            typeName: "Travel",
+            typeId: "4"
         }
     ]
 }
