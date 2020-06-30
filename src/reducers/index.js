@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import {
         Posts,
+        SearchPosts,
         HotPosts,
         PopularPosts,
         RecentPosts,
@@ -28,6 +29,7 @@ const allReducers = combineReducers({
     tags: Tags,
     popularPosts: PopularPosts,
     posts: Posts,
+    searchPost:SearchPosts,
     hotPosts: HotPosts,
     recentPosts: RecentPosts,
     postsByCategory:PostsByCategory,

@@ -9,6 +9,15 @@ export const Posts = (state = postsReducerDefaultState, action) => {
     }
 };
 
+export const SearchPosts = (state = postsReducerDefaultState, action) => {
+    switch (action.type) {
+        case 'GET_SEARCH_POSTS':
+            return action.data;
+        default:
+            return state;
+    }
+};
+
 export const HotPosts = (state = postsReducerDefaultState, action) => {
     switch (action.type) {
         case 'GET_HOT_POSTS':
