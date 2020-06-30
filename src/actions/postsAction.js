@@ -15,6 +15,25 @@ export const getPosts = () => {
     };
 };
 
+// SEARCH POSTS
+const _getSearchPosts = (data) => {
+    return ({
+    type: 'GET_SEARCH_POSTS',
+    data
+})};
+
+export const getSearchPosts = (params = {
+    title: '',
+    page:'',
+    records_no:''
+}) => {
+    return async (dispatch) => {
+        const result = await axios.get('blog/posts?title=' + params.title+ '&page=' + params.page + '&records_no='+params.records_no, requestConfig());
+        let { data } = result.data;
+        dispatch(_getSearchPosts(data));
+    };
+};
+
 // HOT POSTS
 const _getHotPosts = (data) => {
     return ({

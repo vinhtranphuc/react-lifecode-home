@@ -29,7 +29,7 @@ const allReducers = combineReducers({
     tags: Tags,
     popularPosts: PopularPosts,
     posts: Posts,
-    searchPost:SearchPosts,
+    searchPosts:SearchPosts,
     hotPosts: HotPosts,
     recentPosts: RecentPosts,
     postsByCategory:PostsByCategory,
